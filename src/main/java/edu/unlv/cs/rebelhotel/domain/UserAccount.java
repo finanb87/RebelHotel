@@ -1,5 +1,7 @@
 package edu.unlv.cs.rebelhotel.domain;
 
+import java.util.Random;
+
 import org.springframework.security.authentication.encoding.MessageDigestPasswordEncoder;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.roo.addon.entity.RooEntity;
@@ -35,21 +37,32 @@ public class UserAccount {
     private UserGroup userGroup;
 
     private Boolean enabled = Boolean.TRUE;
-
-    public UserAccount() {
+    
+    private static final int MAX_PASSWORD_LENGTH = 8;
+    
+    public static UserAccount fromFileStudent(FileStudent fileStudent) {
+    	UserAccount user = new UserAccount();
+    	user.setUserId(fileStudent.getStudentId());
+    	user.setPassword(user.generateRandomPassword());
+    	user.setEmail(fileStudent.getEmail());
+    	user.setUserGroup(UserGroup.ROLE_USER);
+    	return user;
     }
     
-    public UserAccount(FileStudent fileStudent, String password) {
-    	this.userId = fileStudent.getStudentId();
-    	this.password = password;
-    	this.email = fileStudent.getEmail();
-    	this.userGroup = UserGroup.ROLE_USER;
-    }
-    
+<<<<<<< HEAD
     public UserAccount(Student student, String password) {
     	this.userId = student.getUserId();
     	this.password = password;
     	this.userGroup = UserGroup.ROLE_USER;
+=======
+    public static UserAccount fromStudent(Student student, String email) {
+    	UserAccount user = new UserAccount();
+    	user.setUserId(student.getUserId());
+    	user.setPassword(user.generateRandomPassword());
+    	user.setEmail(email);
+    	user.setUserGroup(UserGroup.ROLE_USER);
+    	return user;
+>>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     }
     
     public void setPassword(String password) {
@@ -67,4 +80,18 @@ public class UserAccount {
         sb.append("UserGroup: ").append(getUserGroup());
         return sb.toString();
     }
+    
+    public String generateRandomPassword(){
+		String charset = "12345ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&abcdefghijklmnopqrstuvwxyz67890";
+		Random random = new Random();
+		StringBuilder sb = new StringBuilder();
+		
+		Integer pos;
+		for (int i = 0; i < MAX_PASSWORD_LENGTH; i++) {
+			pos = random.nextInt(charset.length());
+        	sb.append(charset.charAt(pos));
+		}
+		
+		return sb.toString();
+	}
 }

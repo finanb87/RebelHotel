@@ -1,29 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-    <definition extends="default" name="useraccounts/list">
+	<definition extends = "default" name = "useraccounts.default">
+		<put-attribute name="menu" value="/WEB-INF/views/useraccounts/user_accounts_menu.jspx" />
+	</definition>
+    <definition extends="useraccounts.default" name="useraccounts/list">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/list.jspx"/>
+<<<<<<< HEAD
         <put-attribute name="menu" value="/WEB-INF/views/useraccounts/user_accounts_menu.jspx"/>
+=======
+>>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     </definition>
-<definition extends="default" name="useraccounts/show">
+<definition extends="useraccounts.default" name="useraccounts/show">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/show.jspx"/>
+<<<<<<< HEAD
         <put-attribute name="menu" value="/WEB-INF/views/useraccounts/user_accounts_menu.jspx"/>
+=======
+>>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     </definition>
-<definition extends="default" name="useraccounts/create">
+<definition extends="useraccounts.default" name="useraccounts/create">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/create.jspx"/>
+<<<<<<< HEAD
         <put-attribute name="menu" value="/WEB-INF/views/useraccounts/user_accounts_menu.jspx"/>
+=======
+>>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     </definition>
-<definition extends="default" name="useraccounts/update">
+<definition extends="useraccounts.default" name="useraccounts/update">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/update.jspx"/>
+<<<<<<< HEAD
         <put-attribute name="menu" value="/WEB-INF/views/useraccounts/user_accounts_menu.jspx"/>
+=======
+>>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     </definition>
-<definition extends="default" name="useraccounts/findUserAccountsByName">
+<definition extends="useraccounts.default" name="useraccounts/findUserAccountsByName">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/findUserAccountsByName.jspx"/>
     </definition>
-<definition extends="default" name="useraccounts/findUserAccountsByNSHE">
+<definition extends="useraccounts.default" name="useraccounts/findUserAccountsByNSHE">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/findUserAccountsByNSHE.jspx"/>
     </definition>
-<definition extends="default" name="useraccounts/findUserAccountsByUserId">
+<definition extends="useraccounts.default" name="useraccounts/findUserAccountsByUserId">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/findUserAccountsByUserId.jspx"/>
     </definition>
 <definition extends="default" name="useraccounts/findUserAccountsByUserIdEquals">

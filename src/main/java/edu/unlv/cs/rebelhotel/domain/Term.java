@@ -44,6 +44,35 @@ public class Term {
 			between = semester.compareTo(start.semester)>=0;
 			between &= semester.compareTo(end.semester)<=0;
 		}
+<<<<<<< HEAD
 		return between;
+=======
+		Term rhs = (Term) obj;
+		return new EqualsBuilder()
+				//.append(this, rhs) // ... infinite loop ?
+				.append(semester, rhs.semester)
+				.append(termYear, rhs.termYear)
+				.isEquals();
+    }
+    
+    @Override
+    public int hashCode() {
+		// you pick a hard-coded, randomly chosen, non-zero, odd number
+		// ideally different for each class
+		return new HashCodeBuilder(27, 99)
+				.append(semester)
+				.append(termYear)
+				.toHashCode();
+    }
+    
+    public boolean isBetween(final Term start, final Term end) {
+    	boolean between = start.termYear <= termYear;
+    	between &= end.termYear >= termYear;
+    	if(between){
+    	between = semester.compareTo(start.semester)>=0;
+    	between &= semester.compareTo(end.semester)<=0;
+    	}
+    	return between;
+>>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 	}
 }

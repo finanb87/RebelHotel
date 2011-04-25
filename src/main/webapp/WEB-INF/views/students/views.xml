@@ -3,33 +3,36 @@
 <tiles-definitions>
 	<definition extends="default" name="students.default">
 		<put-attribute cascade="true" name="student_menu" value="/WEB-INF/views/students/studentMenu.jspx"/>
+		<put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
 	</definition>
 	
     <definition extends="students.default" name="students/list">
         <put-attribute name="body" value="/WEB-INF/views/students/list.jspx"/>
-        <put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
     </definition>
     
 	<definition extends="students.default" name="students/show">
         <put-attribute name="body" value="/WEB-INF/views/students/show.jspx"/>
-        <put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
     </definition>
     
 	<definition extends="students.default" name="students/create">
         <put-attribute name="body" value="/WEB-INF/views/students/create.jspx"/>
-        <put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
     </definition>
     
 	<definition extends="students.default" name="students/update">
         <put-attribute name="body" value="/WEB-INF/views/students/update.jspx"/>
-        <put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
     </definition>
     
+<<<<<<< HEAD
     <definition extends="students.default" name="students/myprogress">
 		<put-attribute name="body" value="/WEB-INF/views/students/myprogress.jspx"/>
         <put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
 	</definition>
     
+=======
+    <definition extends = "students.default" name = "students/updateMajor">
+    	<put-attribute name = "body" value = "/WEB-INF/views/students/updateMajor.jspx" />
+    </definition>
+>>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 	<!-- <definition extends="students.default" name="students/findStudentsByNSHEEquals">
         <put-attribute name="body" value="/WEB-INF/views/students/findStudentsByNSHEEquals.jspx"/>
     </definition>
@@ -50,23 +53,20 @@
     </definition> -->
     <definition extends="students.default" name="students/query">
     	<put-attribute name="body" value="/WEB-INF/views/students/query.jspx"/>
-        <put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
     </definition>
     <definition extends="students.default" name="students/queryList">
     	<put-attribute name="body" value="/WEB-INF/views/students/queryList.jspx"/>
-        <put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
     </definition>
-	<definition extends="default" name="students/findStudentsByUserIdEquals">
+	<definition extends="students.default" name="students/findStudentsByUserIdEquals">
         <put-attribute name="body" value="/WEB-INF/views/students/findStudentsByUserIdEquals.jspx"/>
     </definition>
-	<definition extends="default" name="students/findStudentsByFirstNameEquals">
+	<definition extends="students.default" name="students/findStudentsByFirstNameEquals">
         <put-attribute name="body" value="/WEB-INF/views/students/findStudentsByFirstNameEquals.jspx"/>
     </definition>
-	<definition extends="default" name="students/findStudentsByFirstNameLike">
+	<definition extends="students.default" name="students/findStudentsByFirstNameLike">
         <put-attribute name="body" value="/WEB-INF/views/students/findStudentsByFirstNameLike.jspx"/>
     </definition>
-	<definition extends="default" name="students/findStudentsByUserAccount">
+	<definition extends="students.default" name="students/findStudentsByUserAccount">
         <put-attribute name="body" value="/WEB-INF/views/students/findStudentsByUserAccount.jspx"/>
-        <put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
     </definition>
 </tiles-definitions>

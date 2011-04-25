@@ -25,11 +25,28 @@ public class CatalogRequirement {
     
     public CatalogRequirement(){}
     
-    /*public String toString() {
+    public boolean matchesMajor(Major major) {
+    	byte prefixBytes[] = degreeCodePrefix.getBytes();
+    	byte majorBytes[] = major.getDegreeCode().getBytes();
+    	
+    	if (major.getDegreeCode().length() < degreeCodePrefix.length()) {
+    		return false;
+    	}
+    	
+    	for (int i = 0; i < degreeCodePrefix.length(); i++) {
+    		if (prefixBytes[i] != majorBytes[i]) {
+    			return false;
+    		}
+    	}
+    	
+    	return true;
+    }
+    
+    public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Degree: ").append(getDegreeCodePrefix()).append(" ").append(getName());
-        sb.append("TotalHoursNeeded: ").append(getTotalHoursNeeded()).append(", ");
-        sb.append("Term: ").append(getTerm());
+        sb.append(getDegreeCodePrefix()).append(": ");
+        sb.append(getStartTerm()).append(" - ");
+        sb.append(getEndTerm());
         return sb.toString();
-    }*/
+    }
 }

@@ -2,7 +2,16 @@ package edu.unlv.cs.rebelhotel.form;
 
 import java.util.Date;
 
+import javax.persistence.Enumerated;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+
 import edu.unlv.cs.rebelhotel.domain.Term;
+import edu.unlv.cs.rebelhotel.domain.enums.Validation;
+import edu.unlv.cs.rebelhotel.domain.enums.Verification;
 
 public class FormStudentQuery {
 	private boolean useUserId;
@@ -26,21 +35,51 @@ public class FormStudentQuery {
 	
 	private boolean showUserId;
 	private boolean showEmail;
-	private boolean showName;
+	private boolean showFirstName;
+	private boolean showMiddleName;
+	private boolean showLastName;
 	private boolean showAdmitTerm;
 	private boolean showGradTerm;
 	private boolean showCodeOfConductSigned;
 	private boolean showLastModified;
 	private boolean showUserAccount;
+	private boolean showMajor;
 	
 	private boolean outputCsv;
 	
 	private boolean useFirstName;
 	private String firstName;
 	
+	private boolean useMiddleName;
+	private String middleName;
+	
 	private boolean useLastName;
 	private String lastName;
 	
+	private String employerName;
+
+	private String employerLocation;
+
+	@Enumerated
+	private Validation validation;
+	private boolean validationSelected;
+	
+	@Enumerated
+	private Verification verification;
+	private boolean verificationSelected;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(style = "S-")
+	private Date workEffortStartDate;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(style = "S-")
+	private Date workEffortEndDate;
+	
+	private boolean useHours;
+	private Integer hoursLow;
+	private Integer hoursHigh;
+			
 	public boolean getUseUserId() {
 		return useUserId;
 	}
@@ -145,7 +184,7 @@ public class FormStudentQuery {
 		return degreeCode;
 	}
 	
-	public void setDegree(String degreeCode) {
+	public void setDegreeCode(String degreeCode) {
 		this.degreeCode = degreeCode;
 	}
 	
@@ -165,12 +204,28 @@ public class FormStudentQuery {
 		this.showEmail = showEmail;
 	}
 	
-	public boolean getShowName() {
-		return showName;
+	public boolean getShowFirstName() {
+		return showFirstName;
 	}
 	
-	public void setShowName(boolean showName) {
-		this.showName = showName;
+	public void setShowFirstName(boolean showFirstName) {
+		this.showFirstName = showFirstName;
+	}
+	
+	public boolean getShowMiddleName() {
+		return showMiddleName;
+	}
+	
+	public void setShowMiddleName(boolean showMiddleName) {
+		this.showMiddleName = showMiddleName;
+	}
+	
+	public boolean getShowLastName() {
+		return showLastName;
+	}
+	
+	public void setShowLastName(boolean showLastName) {
+		this.showLastName = showLastName;
 	}
 	
 	public boolean getShowAdmitTerm() {
@@ -213,6 +268,14 @@ public class FormStudentQuery {
 		this.showUserAccount = showUserAccount;
 	}
 	
+	public boolean getShowMajor() {
+		return showMajor;
+	}
+	
+	public void setShowMajor(boolean showMajor) {
+		this.showMajor = showMajor;
+	}
+	
 	public boolean getOutputCsv() {
 		return outputCsv;
 	}
@@ -237,6 +300,22 @@ public class FormStudentQuery {
 		this.firstName = firstName;
 	}
 	
+	public boolean getUseMiddleName() {
+		return useMiddleName;
+	}
+	
+	public void setUseMiddleName(boolean useMiddleName) {
+		this.useMiddleName = useMiddleName;
+	}
+	
+	public String getMiddleName() {
+		return middleName;
+	}
+	
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+	
 	public boolean getUseLastName() {
 		return useLastName;
 	}
@@ -251,5 +330,93 @@ public class FormStudentQuery {
 	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	public String getEmployerName() {
+		return employerName;
+	}
+	
+	public void setEmployerName(String employerName) {
+		this.employerName = employerName;
+	}
+	
+	public String getEmployerLocation() {
+		return employerLocation;
+	}
+	
+	public void setEmployerLocation(String employerLocation) {
+		this.employerLocation = employerLocation;
+	}
+	
+	public Verification getVerification() {
+		return verification;
+	}
+	
+	public void setVerification(Verification verification) {
+		this.verification = verification;
+	}
+	
+	public boolean getVerificationSelected() {
+		return verificationSelected;
+	}
+	
+	public void setVerificationSelected(boolean verificationSelected) {
+		this.verificationSelected = verificationSelected;
+	}
+	
+	public Validation getValidation() {
+		return validation;
+	}
+	
+	public void setValidation(Validation validation) {
+		this.validation = validation;
+	}
+	
+	public boolean getValidationSelected() {
+		return validationSelected;
+	}
+	
+	public void setValidationSelected(boolean validationSelected) {
+		this.validationSelected = validationSelected;
+	}
+	
+	public Date getWorkEffortStartDate() {
+		return workEffortStartDate;
+	}
+	
+	public void setWorkEffortStartDate(Date workEffortStartDate) {
+		this.workEffortStartDate = workEffortStartDate;
+	}
+	
+	public Date getWorkEffortEndDate() {
+		return workEffortEndDate;
+	}
+	
+	public void setWorkEffortEndDate(Date workEffortEndDate) {
+		this.workEffortEndDate = workEffortEndDate;
+	}
+	
+	public boolean getUseHours() {
+		return useHours;
+	}
+	
+	public void setUseHours(boolean useHours) {
+		this.useHours = useHours;
+	}
+	
+	public Integer getHoursLow() {
+		return hoursLow;
+	}
+	
+	public void setHoursLow(Integer hoursLow) {
+		this.hoursLow = hoursLow;
+	}
+	
+	public Integer getHoursHigh() {
+		return hoursHigh;
+	}
+	
+	public void setHoursHigh(Integer hoursHigh) {
+		this.hoursHigh = hoursHigh;
 	}
 }

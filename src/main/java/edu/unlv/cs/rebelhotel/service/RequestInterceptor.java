@@ -38,14 +38,18 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
 				}
 				Collection<GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 				if (authorities.contains(UserGroup.ROLE_STUDENT)) {
+<<<<<<< HEAD
 					// All students should have the ROLE_USER role and should also have usernames consisting of 10  digit numbers
+=======
+					// All students should have the ROLE_STUDENT role and should also have usernames consisting of 10  digit numbers
+>>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 					try {
-						UserAccount ua = UserAccount.findUserAccountsByUserId(username).getSingleResult();
-						Student student = Student.findStudentsByUserAccount(ua).getSingleResult();
+						UserAccount account = UserAccount.findUserAccountsByUserId(username).getSingleResult();
+						Student student = Student.findStudentsByUserAccount(account).getSingleResult();
 						userInformation.setStudent(student);
 					}
 					catch (org.springframework.dao.EmptyResultDataAccessException exception) {
-						logger.info("preHandle - A ROLE_USER UserAccount logged in, but no corresponding Student was found!");
+						logger.info("preHandle - A ROLE_STUDENT UserAccount logged in, but no corresponding Student was found!");
 					}
 				}
 			}

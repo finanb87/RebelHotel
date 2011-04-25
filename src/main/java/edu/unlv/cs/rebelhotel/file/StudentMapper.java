@@ -5,7 +5,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
 import edu.unlv.cs.rebelhotel.domain.Student;
 import edu.unlv.cs.rebelhotel.domain.UserAccount;
-import edu.unlv.cs.rebelhotel.file.RandomPasswordGenerator;
 
 @Component
 public class StudentMapper {
@@ -44,8 +43,7 @@ public class StudentMapper {
 			studentAccount = UserAccount.findUserAccountsByUserId(fileStudent.getStudentId()).getSingleResult();
 			return studentAccount;
 		} catch(EmptyResultDataAccessException e) {
-			RandomPasswordGenerator rpg = new RandomPasswordGenerator();
-			studentAccount = new UserAccount(fileStudent,rpg.generateRandomPassword());
+			studentAccount = UserAccount.fromFileStudent(fileStudent);
 			studentAccount.persist();
 		}
 		return studentAccount;

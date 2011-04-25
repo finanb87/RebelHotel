@@ -6,10 +6,16 @@
   <jsp:directive.attribute name="data" type="java.util.Collection" required="true" description="The collection to be displayed in the table" />
   <jsp:directive.attribute name="path" type="java.lang.String" required="true" description="Specify the URL path" />
   <jsp:directive.attribute name="typeIdFieldName" type="java.lang.String" required="false" description="The identifier field name for the type (defaults to 'id')" />
+<<<<<<< HEAD
   <jsp:directive.attribute name="create" type="java.lang.Boolean" required="false" description="Include 'create' link into table (default true)" />
   <jsp:directive.attribute name="update" type="java.lang.Boolean" required="false" description="Include 'update' link into table (default true)" />
   <jsp:directive.attribute name="delete" type="java.lang.Boolean" required="false" description="Include 'delete' link into table (default true)" />
   <jsp:directive.attribute name="show" type="java.lang.Boolean" required="false" description="Include 'show' link into table (default true)" />
+=======
+  <jsp:directive.attribute name="create" type="java.lang.Boolean" required="false" description="Include 'create' link into table (default false)" />
+  <jsp:directive.attribute name="update" type="java.lang.Boolean" required="false" description="Include 'update' link into table (default false)" />
+  <jsp:directive.attribute name="delete" type="java.lang.Boolean" required="false" description="Include 'delete' link into table (default false)" />
+>>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
   <jsp:directive.attribute name="render" type="java.lang.Boolean" required="false" description="Indicate if the contents of this tag and all enclosed tags should be rendered (default 'true')" />
   <jsp:directive.attribute name="z" type="java.lang.String" required="false" description="Used for checking if element has been modified (to recalculate simply provide empty string value)" />
 
@@ -24,13 +30,38 @@
     <c:if test="${empty typeIdFieldName}">
       <c:set var="typeIdFieldName" value="id" />
     </c:if>
+    
+    <c:if test="${empty create}">
+      <c:choose>
+        <c:when test = "${not empty create_access}">
+      	  <c:set var = "create" value = "${create_access}" />
+      	</c:when>
+        <c:otherwise>
+      	  <c:set var="create" value="false" />
+        </c:otherwise>
+      </c:choose>
+    </c:if>
 
     <c:if test="${empty update}">
-      <c:set var="update" value="true" />
+      <c:choose>
+        <c:when test = "${not empty update_access}">
+      	  <c:set var = "update" value = "${update_access}" />
+      	</c:when>
+        <c:otherwise>
+      	  <c:set var="update" value="false" />
+        </c:otherwise>
+      </c:choose>
     </c:if>
 
     <c:if test="${empty delete}">
-      <c:set var="delete" value="true" />
+      <c:choose>
+        <c:when test = "${not empty delete_access}">
+      	  <c:set var = "delete" value = "${delete_access}" />
+      	</c:when>
+        <c:otherwise>
+      	  <c:set var="delete" value="false" />
+        </c:otherwise>
+      </c:choose>
     </c:if>
     
     <c:if test="${empty show}">
@@ -120,7 +151,7 @@
       </c:forEach>
       <tr class="footer">
         <td colspan="10">
-          <c:if test="${empty create or create}">
+          <c:if test="${create}">
             <span class="new">
               <spring:url value="/${path}" var="create_url">
                 <spring:param name="form" />
