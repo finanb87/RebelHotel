@@ -1,5 +1,7 @@
 package edu.unlv.cs.rebelhotel.domain;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -37,23 +39,23 @@ public class Term {
 		return sb.toString();
 	}
 
-	public boolean isBetween(final Term start, final Term end) {
-		boolean between = start.termYear <= termYear;
-		between &= end.termYear >= termYear;
-		if(between){
-			between = semester.compareTo(start.semester)>=0;
-			between &= semester.compareTo(end.semester)<=0;
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
 		}
-<<<<<<< HEAD
-		return between;
-=======
+		if (obj == this) {
+			return true;
+		}
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
 		Term rhs = (Term) obj;
 		return new EqualsBuilder()
-				//.append(this, rhs) // ... infinite loop ?
-				.append(semester, rhs.semester)
-				.append(termYear, rhs.termYear)
+				// .append(this, rhs) // ... infinite loop ?
+				.append(semester, rhs.semester).append(termYear, rhs.termYear)
 				.isEquals();
-    }
+	}
     
     @Override
     public int hashCode() {
@@ -66,13 +68,19 @@ public class Term {
     }
     
     public boolean isBetween(final Term start, final Term end) {
-    	boolean between = start.termYear <= termYear;
-    	between &= end.termYear >= termYear;
+    	boolean between = start.termYear < termYear;
+    	between &= end.termYear > termYear;
+
     	if(between){
-    	between = semester.compareTo(start.semester)>=0;
-    	between &= semester.compareTo(end.semester)<=0;
+    		return true;
     	}
-    	return between;
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
+    	if(start.termYear.equals(termYear)){
+    		return semester.ordinal() >= start.semester.ordinal();
+    	}
+    	if(end.termYear.equals(termYear)){
+    		return semester.ordinal() <= end.semester.ordinal();
+    	}
+    	
+    	return false;
 	}
 }

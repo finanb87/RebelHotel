@@ -22,17 +22,14 @@
         <put-attribute name="body" value="/WEB-INF/views/students/update.jspx"/>
     </definition>
     
-<<<<<<< HEAD
     <definition extends="students.default" name="students/myprogress">
 		<put-attribute name="body" value="/WEB-INF/views/students/myprogress.jspx"/>
         <put-attribute name="menu" value="/WEB-INF/views/students/student_menu.jspx" />
 	</definition>
     
-=======
     <definition extends = "students.default" name = "students/updateMajor">
     	<put-attribute name = "body" value = "/WEB-INF/views/students/updateMajor.jspx" />
     </definition>
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 	<!-- <definition extends="students.default" name="students/findStudentsByNSHEEquals">
         <put-attribute name="body" value="/WEB-INF/views/students/findStudentsByNSHEEquals.jspx"/>
     </definition>

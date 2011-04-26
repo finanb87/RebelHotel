@@ -6,16 +6,10 @@
   <jsp:directive.attribute name="data" type="java.util.Collection" required="true" description="The collection to be displayed in the table" />
   <jsp:directive.attribute name="path" type="java.lang.String" required="true" description="Specify the URL path" />
   <jsp:directive.attribute name="typeIdFieldName" type="java.lang.String" required="false" description="The identifier field name for the type (defaults to 'id')" />
-<<<<<<< HEAD
   <jsp:directive.attribute name="create" type="java.lang.Boolean" required="false" description="Include 'create' link into table (default true)" />
   <jsp:directive.attribute name="update" type="java.lang.Boolean" required="false" description="Include 'update' link into table (default true)" />
   <jsp:directive.attribute name="delete" type="java.lang.Boolean" required="false" description="Include 'delete' link into table (default true)" />
   <jsp:directive.attribute name="show" type="java.lang.Boolean" required="false" description="Include 'show' link into table (default true)" />
-=======
-  <jsp:directive.attribute name="create" type="java.lang.Boolean" required="false" description="Include 'create' link into table (default false)" />
-  <jsp:directive.attribute name="update" type="java.lang.Boolean" required="false" description="Include 'update' link into table (default false)" />
-  <jsp:directive.attribute name="delete" type="java.lang.Boolean" required="false" description="Include 'delete' link into table (default false)" />
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
   <jsp:directive.attribute name="render" type="java.lang.Boolean" required="false" description="Indicate if the contents of this tag and all enclosed tags should be rendered (default 'true')" />
   <jsp:directive.attribute name="z" type="java.lang.String" required="false" description="Used for checking if element has been modified (to recalculate simply provide empty string value)" />
 

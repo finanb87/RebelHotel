@@ -39,13 +39,6 @@ public class Student {
     @Column(unique = true)
     private String userId;
 
-<<<<<<< HEAD
-//    @NotNull
-//    @Size(min = 5)
-//    private String email = "default";
-
-=======
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     @NotNull
     @Size(min = 2)
     private String firstName;
@@ -124,8 +117,10 @@ public class Student {
 		return getMajors().contains(newMajor);
 	}
 
-	private void addMajor(Major major) {
-		getMajors().add(major);
+	public void addMajor(Major major) {
+		Set<Major> majors = getMajors();
+		majors.add(major);
+		setMajors(majors);
 	}
 
 	private void addMajors(Set<Major> majors) {
@@ -142,7 +137,6 @@ public class Student {
 		return this.majors.isEmpty();
 	}
     
-<<<<<<< HEAD
     /**
      * This method creates a list of progress reports for each
      * of a given student's majors and returns this list as a
@@ -157,7 +151,8 @@ public class Student {
     	}
     	
     	return progressSet;
-=======
+    }
+    
     public String getEmail() {
     	return userAccount.getEmail();
     }
@@ -176,6 +171,5 @@ public class Student {
     	setAdmitTerm(formStudent.getAdmitTerm());
     	setGradTerm(formStudent.getGradTerm());
     	setCodeOfConductSigned(formStudent.getCodeOfConductSigned());
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     }
 }

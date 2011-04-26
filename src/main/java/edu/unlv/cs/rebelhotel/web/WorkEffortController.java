@@ -138,24 +138,12 @@ public class WorkEffortController {
         return "workefforts/update";
     }
 	
-<<<<<<< HEAD
 	/*@RequestMapping(value= "/{id}", params = "forstudent" , method=RequestMethod.GET)
 	public String randomValidation(@PathVariable("id") Long id, Model model) {
 	 
 		return "";
 	}*/
-	
-	
-	@PreAuthorize("hasRole('ROLE_STUDENT')")
-	@RequestMapping(params = "mywork", method = RequestMethod.GET)
-	public String listPersonalWork(Model model) {
-		model.addAttribute("str", "A list to contain your completed jobs");
-		Student student = userInformation.getStudent();
-		List<WorkEffort> workEfforts = WorkEffort.findWorkEffortsByStudentEquals(student).getResultList();
-		model.addAttribute("workefforts", workEfforts);
-		return "workefforts/mywork";
-	}
-=======
+
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_SUPERUSER')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model model) {
@@ -172,7 +160,6 @@ public class WorkEffortController {
         model.addAttribute("itemId", id);
         return "workefforts/show";
     }
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 	
 	void addDateTimeFormatPatterns(Model model) {
         model.addAttribute("workEffortDuration_startdate_date_format", DateTimeFormat.patternForStyle("S-", LocaleContextHolder.getLocale()));

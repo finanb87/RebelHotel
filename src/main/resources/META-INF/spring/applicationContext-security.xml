@@ -32,17 +32,6 @@
         <logout logout-url="/resources/j_spring_security_logout"/>
         
         <!-- Configure these elements to secure URIs in your application -->
-<<<<<<< HEAD
-        <intercept-url pattern = "/useraccounts/**" access = "hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/choices/**" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/member/**" access="isAuthenticated()" />
-        <intercept-url pattern="/resources/**" access="permitAll" />
-        <intercept-url pattern="/workefforts" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERUSER','ROLE_USER','ROLE_STUDENT')"/>
-        <intercept-url pattern="/students" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERUSER','ROLE_USER','ROLE_STUDENT')"/>
-        <intercept-url pattern="/" access="hasAnyRole('ROLE_ANONYMOUS','ROLE_USER','ROLE_ADMIN','ROLE_SUPERUSER','ROLE_STUDENT')" />
-        <intercept-url pattern="/login" access="permitAll"/>
-        <intercept-url pattern="/**" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERUSER','ROLE_STUDENT')" />
-=======
         <!--<intercept-url pattern = "/useraccounts/**" access = "hasRole('ROLE_ADMIN')" />-->
         <!--<intercept-url pattern="/choices/**" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/member/**" access="isAuthenticated()" />-->
@@ -50,10 +39,10 @@
         <!-- students will be able to view their work list and view work efforts individually in detail -->
         <intercept-url pattern = "/workefforts/mywork" access = "hasAnyRole('ROLE_STUDENT', 'ROLE_USER', 'ROLE_ADMIN', 'ROLE_SUPERUSER')" />
         <intercept-url pattern = "/workefforts/[0-9]+" access = "hasAnyRole('ROLE_STUDENT', 'ROLE_USER', 'ROLE_ADMIN', 'ROLE_SUPERUSER')" />
+        <intercept-url pattern="/students" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERUSER','ROLE_USER','ROLE_STUDENT')"/>
         <intercept-url pattern="/" access="hasAnyRole('ROLE_ANONYMOUS', 'ROLE_STUDENT', 'ROLE_USER', 'ROLE_ADMIN', 'ROLE_SUPERUSER')" />
         <intercept-url pattern="/login" access="permitAll"/>
-        <intercept-url pattern="/.*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_SUPERUSER')" />
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
+        <intercept-url pattern="/.*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_SUPERUSER','ROLE_STUDENT')" />
     </http>
 	
 	<!-- For now, the default implementation is (attempted to be) rebuilt here just in case it needs to be changed later -->

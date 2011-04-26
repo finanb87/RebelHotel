@@ -9,44 +9,15 @@ import edu.unlv.cs.rebelhotel.domain.Term;
 import edu.unlv.cs.rebelhotel.domain.UserAccount;
 import edu.unlv.cs.rebelhotel.domain.WorkEffort;
 import java.lang.Integer;
-import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 privileged aspect StudentController_Roo_Controller {
-    
-<<<<<<< HEAD
-    @RequestMapping(method = RequestMethod.POST)
-    public String StudentController.create(@Valid Student student, BindingResult result, Model model, HttpServletRequest request) {
-        if (result.hasErrors()) {
-            model.addAttribute("student", student);
-            addDateTimeFormatPatterns(model);
-            return "students/create";
-        }
-        student.persist();
-        return "redirect:/students/" + encodeUrlPathSegment(student.getId().toString(), request);
-    }
-    
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String StudentController.createForm(Model model) {
-        model.addAttribute("student", new Student());
-        addDateTimeFormatPatterns(model);
-        return "students/create";
-=======
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String StudentController.show(@PathVariable("id") Long id, Model model) {
-        addDateTimeFormatPatterns(model);
-        model.addAttribute("student", Student.findStudent(id));
-        model.addAttribute("itemId", id);
-        return "students/show";
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
-    }
     
     @RequestMapping(method = RequestMethod.GET)
     public String StudentController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model model) {

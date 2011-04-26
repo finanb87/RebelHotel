@@ -385,18 +385,7 @@ public class StudentQueryService {
 					entries.add("");
 				}
 			}
-<<<<<<< HEAD
-//			if (formStudentQuery.getShowEmail()) {
-//				if (student.getEmail() != null) {
-//					entries.add(student.getEmail().toString());
-//				}
-//				else {
-//					entries.add("");
-//				}
-//			}
-			if (formStudentQuery.getShowName()) {
-				entries.add(student.getName());
-=======
+
 			if (formStudentQuery.getShowEmail()) {
 				if (student.getEmail() != null) {
 					entries.add(student.getEmail().toString());
@@ -413,7 +402,6 @@ public class StudentQueryService {
 			}
 			if (formStudentQuery.getShowLastName()) {
 				entries.add(student.getLastName());
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 			}
 			if (formStudentQuery.getShowAdmitTerm()) {
 				if (student.getAdmitTerm() != null) {

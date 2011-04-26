@@ -20,9 +20,7 @@ public class Major {
 	private String degreeCode;
 
 	@ManyToOne
-<<<<<<< HEAD
-	private Term catalogTerm;
-=======
+
     private Term catalogTerm;
 	
 	@ManyToOne
@@ -30,7 +28,6 @@ public class Major {
 	
 	private Long totalHours; // calculated progress toward completion is stored here
 	private Long majorHours; // major related hours (50% requirement)
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 
 	@Deprecated
 	private boolean completed_work_requirements = false;
@@ -128,7 +125,7 @@ public class Major {
 	public boolean appliesTo(CatalogRequirement requirement) {
 		return this.getDegreeCode().startsWith(
 				requirement.getDegreeCodePrefix())
-				&& catalogTerm.isBetween(requirement.getStartTerm(),
+				&& this.getCatalogTerm().isBetween(requirement.getStartTerm(),
 						requirement.getEndTerm());
 	}
 }

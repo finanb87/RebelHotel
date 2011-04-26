@@ -19,10 +19,7 @@
         <br />
         <field:select field="verificationType" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_verificationType" items="${verificationtypes}" path="verificationtypes" z="Kr/5QpSvA7DJVKYxvMEeGemJFiw="/>
         <field:select field="payStatus" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_payStatus" items="${paystatuses}" path="paystatuses" z="Y/234bX/lvLoqut2yWTDLlr2rEg="/>
-<<<<<<< HEAD
-        <field:input field="duration" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_duration" z="MM3jIIulQ7CEKbExD4J+3qNDoUc="/>
-	    <field:select field="catalogRequirements" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_catalogRequirements" itemValue="id" items="${catalogrequirements}" multiple="true" path="/catalogrequirements" z="wg4QYQgUBQSBmnQA9y+BOAHZjtg="/>
-=======
+
         <field:simple field="workeffortduration" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_duration" text="Work Effort Duration"/>
 		<field:datetime dateTimePattern="${workEffortDuration_startdate_date_format}" field="duration.startDate" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_duration_startDate" z="e1NnqzkemAXKA+kNm1HTZ7hquPw="/>
 		<field:datetime dateTimePattern="${workEffortDuration_enddate_date_format}" field="duration.endDate" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_duration_endDate" z="sq/AE9soB8d+B1rhARMLA9KwpqY="/>
@@ -30,7 +27,5 @@
 		<field:select field="validation" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_validation" items="${validations}" path="validations" z="vO3fjwp/J0bttFwf4Y2RRFqN9f0="/>
         <field:select field="verification" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_verification" items="${verifications}" path="verifications" z="AwKiAFujqkR5ZMQv560AxraxL74="/>
     <field:select field="catalogRequirements" id="c_edu_unlv_cs_rebelhotel_domain_WorkEffort_catalogRequirements" itemValue="id" items="${catalogrequirements}" multiple="true" path="/catalogrequirements" z="wg4QYQgUBQSBmnQA9y+BOAHZjtg="/>
-    
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     </form:update>
 </div>

@@ -19,10 +19,7 @@ import javax.validation.Valid;
 import org.hibernate.Hibernate;
 import org.joda.time.format.DateTimeFormat;
 
-<<<<<<< HEAD
-=======
 import edu.unlv.cs.rebelhotel.domain.CatalogRequirement;
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 import edu.unlv.cs.rebelhotel.domain.Major;
 import edu.unlv.cs.rebelhotel.domain.Student;
 import edu.unlv.cs.rebelhotel.domain.UserAccount;
@@ -249,7 +246,6 @@ public class StudentController {
 		return properties;
 	}
 	
-<<<<<<< HEAD
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String show(@PathVariable("id") Long id, Model model) {
         addDateTimeFormatPatterns(model);
@@ -259,12 +255,8 @@ public class StudentController {
         return "students/show";
     }
 	
-	@RequestMapping(params = "query", method = RequestMethod.POST)
-	public String queryList(@Valid FormStudentQuery form, BindingResult result, Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
-=======
 	@RequestMapping(value = "/listquery", method = RequestMethod.GET)
 	public String queryList(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @Valid FormStudentQuery form, BindingResult result, Model model, HttpServletRequest request, HttpServletResponse response) throws IOException, Exception {
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 		studentQueryValidator.validate(form, result); // rather than assigning the validator to the student controller (like with the work effort controller), it should only apply to this method
 		
 		if (result.hasErrors()) {

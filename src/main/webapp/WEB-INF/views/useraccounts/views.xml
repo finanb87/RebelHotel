@@ -6,31 +6,19 @@
 	</definition>
     <definition extends="useraccounts.default" name="useraccounts/list">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/list.jspx"/>
-<<<<<<< HEAD
         <put-attribute name="menu" value="/WEB-INF/views/useraccounts/user_accounts_menu.jspx"/>
-=======
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     </definition>
 <definition extends="useraccounts.default" name="useraccounts/show">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/show.jspx"/>
-<<<<<<< HEAD
         <put-attribute name="menu" value="/WEB-INF/views/useraccounts/user_accounts_menu.jspx"/>
-=======
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     </definition>
 <definition extends="useraccounts.default" name="useraccounts/create">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/create.jspx"/>
-<<<<<<< HEAD
         <put-attribute name="menu" value="/WEB-INF/views/useraccounts/user_accounts_menu.jspx"/>
-=======
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     </definition>
 <definition extends="useraccounts.default" name="useraccounts/update">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/update.jspx"/>
-<<<<<<< HEAD
         <put-attribute name="menu" value="/WEB-INF/views/useraccounts/user_accounts_menu.jspx"/>
-=======
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     </definition>
 <definition extends="useraccounts.default" name="useraccounts/findUserAccountsByName">
         <put-attribute name="body" value="/WEB-INF/views/useraccounts/findUserAccountsByName.jspx"/>

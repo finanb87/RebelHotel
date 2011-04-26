@@ -49,12 +49,6 @@ public class UserAccount {
     	return user;
     }
     
-<<<<<<< HEAD
-    public UserAccount(Student student, String password) {
-    	this.userId = student.getUserId();
-    	this.password = password;
-    	this.userGroup = UserGroup.ROLE_USER;
-=======
     public static UserAccount fromStudent(Student student, String email) {
     	UserAccount user = new UserAccount();
     	user.setUserId(student.getUserId());
@@ -62,7 +56,6 @@ public class UserAccount {
     	user.setEmail(email);
     	user.setUserGroup(UserGroup.ROLE_USER);
     	return user;
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
     }
     
     public void setPassword(String password) {

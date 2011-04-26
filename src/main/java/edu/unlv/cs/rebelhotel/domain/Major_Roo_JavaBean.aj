@@ -5,10 +5,7 @@ package edu.unlv.cs.rebelhotel.domain;
 
 import edu.unlv.cs.rebelhotel.domain.Student;
 import edu.unlv.cs.rebelhotel.domain.Term;
-<<<<<<< HEAD
-=======
 import java.lang.Long;
->>>>>>> 63e7d7249c867f0c29ea9c8db2017aeb0ee90cb9
 import java.lang.String;
 
 privileged aspect Major_Roo_JavaBean {
