@@ -91,11 +91,11 @@
             <td>
               <c:choose>
                 <c:when test="${columnMaxLength lt 0}">
-                  <spring:eval expression="item[column]" />
+                  	<spring:eval expression="item[column]" />
                 </c:when>
                 <c:otherwise>
-                  <spring:eval expression="item[column]" var="colTxt" />
-                  <c:out value="${fn:substring(colTxt, 0, columnMaxLength)}" />
+                  	<spring:eval expression="item[column]" var="colTxt" />
+                  	<c:out value="${fn:substring(colTxt, 0, columnMaxLength)}"/>
                 </c:otherwise>
               </c:choose>
             </td>

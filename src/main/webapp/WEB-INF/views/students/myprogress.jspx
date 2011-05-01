@@ -29,5 +29,4 @@
 				<table:column property="totalHours" id="c_edu_unlv_cs_rebelhotel_domain_progress_totalHours"></table:column>
         	</table:table>
         </page:list>
-    
 </div>
