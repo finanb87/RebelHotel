@@ -15,6 +15,7 @@ import edu.unlv.cs.rebelhotel.domain.Term;
 @RooJavaBean
 @RooEntity(finders = {"findMajorsByDegreeCodeAndCatalogTerm"})
 public class Major {
+	
 	private boolean reachedMilestone;
 
 	@NotNull
